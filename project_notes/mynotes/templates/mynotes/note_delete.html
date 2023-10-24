@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Notas - Eliminar Nota</title>
+    <style>
+        *{
+            background-color: rgb(197, 178, 133)
+        }
+    </style>
+</head>
+<body>
+    <h1>Eliminar Nota</h1>
+    <p>¿Estás seguro de que deseas eliminar la nota "{{ note.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Eliminar">
+    </form>
+    <a href="{% url 'mynotes:note_list' %}">Cancelar</a>
+</body>
+</html>
+

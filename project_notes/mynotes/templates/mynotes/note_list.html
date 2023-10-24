@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Notas - Lista de Notas</title>
+    <style>
+        *{
+            background-color: rgb(197, 178, 133)
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Notas</h1>
+    {% if notes %}
+    <ul>
+        {% for note in notes %}
+            <li>
+                <a href="{% url 'mynotes:note_detail' note.id %}">{{ note.title }}</a> - {{ note.content }}
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay notas disponibles.</p>
+    {% endif %}
+    <a href="{% url 'mynotes:note_create' %}">Crear Nueva Nota</a>
+</body>
+</html>

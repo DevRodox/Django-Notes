@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Notas - Crear/Editar Nota</title>
+    <style>
+        *{
+            background-color: rgb(197, 178, 133)
+        }
+    </style>
+</head>
+<body>
+    <h1>Crear/Editar Nota</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" value="{{ note.title }}" required>
+        <br>
+        <label for="content">Contenido:</label>
+        <textarea id="content" name="content" required>{{ note.content }}</textarea>
+        <br>
+        <input type="submit" value="Guardar">
+    </form>
+    <a href="{% url 'mynotes:note_list' %}">Cancelar</a>
+</body>
+</html>

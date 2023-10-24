@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Notas - Detalle de Nota</title>
+    <style>
+        *{
+            background-color: rgb(197, 178, 133)
+        }
+    </style>
+</head>
+<body>
+    <h1>Detalle de Nota</h1>
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.content }}</p>
+    <p>Fecha de Creación: {{ note.creation_date }}</p>
+    <a href="{% url 'mynotes:note_edit' note.id %}">Editar Nota</a>
+    <a href="{% url 'mynotes:note_delete' note.id %}">Eliminar Nota</a>
+    <a href="{% url 'mynotes:note_list' %}">Volver a la Lista de Notas</a>
+</body>
+</html>
